@@ -22,7 +22,6 @@
                 </nav>
             </div>
         </header>
-
         
             <div>
                 <div class="container">
@@ -49,7 +48,6 @@ switch($acao){
     case 'formInserir':
         echo "
                            
-
         <form  method='post' action='crudCinema.php?acao=inserir' name='dados' onSubmit='return enviardados();'>
         <center><table width='588' border='0' align='center'>
         <tr >
@@ -157,7 +155,6 @@ switch($acao){
         window.location.href='crudCinema.php?acao=selecionar'</script>";
         }
 
-        
         break;
     #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     case 'montar':
@@ -230,7 +227,6 @@ switch($acao){
             echo "</td>";
             echo "</tr>";
             
-            
             echo "<tr>";
             echo "<td height='22'></td>";
             echo "<td>";
@@ -241,7 +237,6 @@ switch($acao){
             echo "</tr>";
             echo "</tr>";
             
-
         }
         echo "</table>";
         echo "</form>";
@@ -255,9 +250,7 @@ switch($acao){
             </footer>  
             </div>
         ";
-        
-
-        
+                
         mysqli_close($conexao);
         
         break;
@@ -284,8 +277,7 @@ switch($acao){
         }
         
         mysqli_close($conexao);
-        
-        
+              
         break;
         
     #////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -301,11 +293,7 @@ switch($acao){
         }
         mysqli_close($conexao);
         header("Location:crudCinema.php?acao=selecionar");
-       
-       
-        
-
-        
+             
         break;
         
     #////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
@@ -335,7 +323,6 @@ switch($acao){
         
         $resultado = mysqli_query($conexao, $sqlSelect) or die ("Erro ao retornar dados");
         
-        
         echo "</br>";
         
         while ($registro = mysqli_fetch_array($resultado)){
@@ -344,10 +331,8 @@ switch($acao){
             $rua = $registro['Rua'];
             $numero = $registro['Numero'];
             $cidade = $registro['Cidade'];
-            $estado = $registro['UF'];
-            
-
-            
+            $estado = $registro['UF'];       
+     
             echo "<tr>";
             echo "<td style='text-align: center;'><a style='margin: 10px;'>". $id . "</a></td>";
             echo "<td style='text-align: center;'><a style='margin: 10px;'>". $nome . "</a></td>";
@@ -355,10 +340,8 @@ switch($acao){
             echo "<td style='text-align: center;'><a style='margin: 10px;'>". $cidade . "</a></td>";
             echo "<td style='text-align: center;'><a style='margin: 10px;'>". $estado . "</a></td>";
             
- 
             echo "<td ><a style='text-decoration: none; color: #AAA; margin: 10px;'  href='crudCinema.php?acao=deletar&id=$id'>Deletar</a>
-            <a style='text-decoration: none; color: #AAA; margin: 10px;' href='crudCinema.php?acao=montar&id=$id'>Atualizar</a>
-            
+            <a style='text-decoration: none; color: #AAA; margin: 10px;' href='crudCinema.php?acao=montar&id=$id'>Atualizar</a>           
             ";
             
         }
